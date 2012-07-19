@@ -1,0 +1,62 @@
+USEAGE:
+-------
+
+1. Clone the repo and bundle 'er up!
+
+# git clone 
+# bundle install
+
+2. Startup the server
+
+# ruby main.rb -sv -p 3000
+
+3. Hack away.
+
+CONTROLLERS:
+
+# app/controllers/me_controller.rb
+
+Class MeController < ApplicationController
+	def index
+	end
+
+	def some_action
+		@id = params[:id]
+	end
+end
+
+In your browser:
+/me
+/me/some_action/99
+
+Views:
+# app/views/me/index.erb
+
+<strong>Hello there! <%= @id %></strong>
+
+Layouts:
+# app/views/layouts/application.erb
+
+<html>
+<body>
+	<%= yield %>
+</body>
+</html>
+
+MVC CONVENTIONS:
+----------------
+
+Directories
+Basically, the same as rails.
+----
+app
+app/views
+app/controllers
+app/models
+
+Routing
+----
+Routes are stored in main.rb
+You'll see the default route in there. Don't remove it unless you need to be more restful or explicit.
+You can add more routes ahead of that one.
+
